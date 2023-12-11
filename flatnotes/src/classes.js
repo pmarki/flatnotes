@@ -16,7 +16,7 @@ class Note {
   }
 
   get lastModifiedAsString() {
-    return this.lastModifiedAsDate.toLocaleString();
+    return this.lastModifiedAsDate.getFullYear() + '-' + this.lastModifiedAsDate.getMonth() + '-' + this.lastModifiedAsDate.getDay();
   }
 }
 

@@ -45,9 +45,7 @@
       <div
         v-for="group in resultsGrouped"
         :key="group.name"
-        :class="{ 'mb-5': sortByIsGrouped }"
       >
-        <p v-if="sortByIsGrouped" class="group-name">{{ group.name }}</p>
         <div
           v-for="result in group.searchResults"
           :key="result.title"
@@ -92,6 +90,7 @@
 
 .sort-select {
   padding-inline: 6px;
+  color: var(--colour-text-muted);
 }
 
 .group-name {
@@ -170,10 +169,6 @@ export default {
   },
 
   computed: {
-    sortByIsGrouped: function () {
-      return this.sortBy == this.sortOptions.title;
-    },
-
     resultsGrouped: function () {
       if (this.sortBy == this.sortOptions.title) {
         return this.resultsByTitle();

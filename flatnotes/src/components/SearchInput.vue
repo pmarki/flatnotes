@@ -82,23 +82,17 @@ export default {
 
   methods: {
     search: function () {
-      if (this.searchTermInput) {
-        this.searchTermInput = this.searchTermInput.trim();
+      var searchTerm = this.searchTermInput.trim();
+      if (!searchTerm) {
+        searchTerm = '*';
       }
-      if (this.searchTermInput) {
         EventBus.$emit(
           "navigate",
           `${constants.basePaths.search}?${
             constants.params.searchTerm
-          }=${encodeURIComponent(this.searchTermInput)}`
+          }=${encodeURIComponent(searchTerm)}`
         );
-      } else {
-        this.$bvToast.toast("Please enter a search term ✘", {
-          variant: "danger",
-          noCloseButton: true,
-          toaster: "b-toaster-bottom-right",
-        });
-      }
+      searchTerm = '';
     },
 
     highlightSearchInput: function () {

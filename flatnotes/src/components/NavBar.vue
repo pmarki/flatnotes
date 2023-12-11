@@ -19,7 +19,13 @@
       >
         <b-icon icon="plus-circle"></b-icon><span>New Note</span>
       </a>
-
+      <a
+          class="bttn"
+          :href="azHref"
+          @click.prevent="navigate(azHref, $event)"
+      >
+        <b-icon icon="files"></b-icon><span>All Notes</span>
+      </a>
       <!-- Menu -->
       <b-dropdown
         menu-class="menu"
@@ -30,7 +36,7 @@
         right
       >
         <template #button-content>
-          <b-icon icon="list" class="align-middle"></b-icon><span>Menu</span>
+          <b-icon icon="list" class="align-middle"></b-icon>
         </template>
 
         <!-- Search -->

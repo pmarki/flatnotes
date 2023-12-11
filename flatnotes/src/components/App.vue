@@ -26,27 +26,9 @@
       :auth-type="authType"
     ></Login>
 
-    <!-- Home -->
+    <!-- Home and Search Results -->
     <div
-      v-if="currentView == views.home"
-      class="home-view align-self-center d-flex flex-column justify-content-center align-items-center flex-grow-1 w-100"
-    >
-      <Logo class="mb-3"></Logo>
-      <SearchInput
-        :initial-value="searchTerm"
-        class="search-input mb-4"
-      ></SearchInput>
-      <div v-if="authType != null && authType != constants.authTypes.readOnly">
-        <RecentlyModified
-          class="recently-modified"
-          :max-notes="5"
-        ></RecentlyModified>
-      </div>
-    </div>
-
-    <!-- Search Results -->
-    <div
-      v-if="currentView == views.search"
+      v-if="currentView == views.search || currentView == views.home"
       class="flex-grow-1 search-results-view d-flex flex-column"
     >
       <SearchResults

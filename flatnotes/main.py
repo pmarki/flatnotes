@@ -202,7 +202,7 @@ def get_tags():
     response_model=List[SearchResultModel],
 )
 def search(
-    term: str,
+    term: str = '*',
     sort: Literal["score", "title", "lastModified"] = "score",
     order: Literal["asc", "desc"] = "desc",
     limit: int = None,
