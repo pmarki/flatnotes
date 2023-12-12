@@ -163,7 +163,7 @@ export default {
       searchFailedIcon: null,
       searchResults: null,
       searchResultsIncludeHighlights: null,
-      sortBy: 0,
+      sortBy: 1,
       showHighlights: true,
     };
   },
