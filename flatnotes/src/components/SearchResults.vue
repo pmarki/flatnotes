@@ -176,7 +176,7 @@ export default {
         return this.resultsByLastModified();
       } else {
         // Default
-        return this.resultsByScore();
+        return this.resultsByTitle();
       }
     },
   },
@@ -317,7 +317,7 @@ export default {
     },
 
     init: function () {
-      this.sortBy = helpers.getSearchParamInt(constants.params.sortBy, 0);
+      this.sortBy = helpers.getSearchParamInt(constants.params.sortBy, 1);
 
       this.showHighlights = helpers.getSearchParamBool(
         constants.params.showHighlights,
